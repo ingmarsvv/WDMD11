@@ -69,20 +69,28 @@
         </div>
     <?php } ?>
     <pre> <?php print_r($_POST); ?> </pre> <br>
-    <table class="table-fixed text-2xl mb-72 ml-8">
     <?php
-        if(isset($_POST["submit2"])){
+        if(isset($_POST["submit2"])){ ?>
+            <table class="table-fixed text-2xl mb-72 ml-8">
+                <tr class="font-bold">
+                    <th>Vārds</th>
+                    <th>Uzvārds</th>
+                    <th>Balsojums</th>
+                </tr>
+            <?php
             $candidates = !empty($_POST["candidates"]) ? $_POST["candidates"] : [];
             function compare($array1, $array2){
                 return strcmp($array1['lastname'], $array2['lastname']);
             }
             usort($candidates, "compare");
-            foreach($candidates as $candidate){ ?>
+            foreach($candidates as $candidate){
+                if(!empty($candidate['firstname'])){ ?>
                 <tr>
                     <td class="border border-slate-300 px-6" ><?= $candidate['firstname'] ?></td>
                     <td class="border border-slate-300 px-6" ><?= $candidate['lastname'] ?></td>
-                    <td class="border border-slate-300 px-6" ><?= $candidate['vote'] ?></td>
-            <?php } ?>
+                    <td class="border border-slate-300 px-6" ><?= !empty($candidate['vote']) ? $candidate['vote'] : "";?></td>
+            <?php } 
+        } ?>
                 </tr>
     </table>           
         <?php } ?>
