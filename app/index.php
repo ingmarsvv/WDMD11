@@ -59,7 +59,7 @@
                         <input type="radio" name="candidates[<?= $i ?>][vote]" value="atturos">
                     </div>
                 </div>       
-        <?php } ?>
+            <?php } ?>
                     <div>
                         <input class="border border-black rounded hover:bg-orange-300 cursor-pointer" type="submit" name="submit2" value="Click to submit">     
                     </div>
@@ -82,10 +82,9 @@
                     <td class="border border-slate-300 px-6" ><?= $candidate['firstname'] ?></td>
                     <td class="border border-slate-300 px-6" ><?= $candidate['lastname'] ?></td>
                     <td class="border border-slate-300 px-6" ><?= $candidate['vote'] ?></td>
-                <?php } ?>
+            <?php } ?>
                 </tr>
-            <?php ?>
     </table>           
-    <?php } ?>
+        <?php } ?>
 </body>
 </html>
