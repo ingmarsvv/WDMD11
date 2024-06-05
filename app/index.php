@@ -89,8 +89,8 @@
                     <td class="border border-slate-300 px-6" ><?= $candidate['firstname'] ?></td>
                     <td class="border border-slate-300 px-6" ><?= $candidate['lastname'] ?></td>
                     <td class="border border-slate-300 px-6" ><?= !empty($candidate['vote']) ? $candidate['vote'] : "";?></td>
-            <?php } 
-        } ?>
+                <?php } 
+            } ?>
                 </tr>
     </table>           
         <?php } ?>
